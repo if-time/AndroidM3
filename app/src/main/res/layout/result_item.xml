@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="Result"
+            type="com.example.androidm3.orm.trecogntionresult.Result"/>
+
+        <variable
+            name="LookUp"
+            type="com.example.androidm3.Operate.ResultonClickHandler"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:id="@+id/r_number"
+            android:layout_width="50dp"
+            android:layout_height="47dp"
+            android:textSize="17sp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:text='@{""+Result.number}'
+            />
+
+        <TextView
+            android:id="@+id/r_time"
+            android:layout_width="200dp"
+            android:layout_height="47dp"
+            android:layout_toRightOf="@id/r_number"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:text="@{Result.time}"
+            />
+
+        <TextView
+            android:id="@+id/r_type"
+            android:layout_width="100dp"
+            android:layout_height="47dp"
+            android:layout_toRightOf="@id/r_time"
+            android:gravity="center"
+            android:text="@{Result.type}"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/r_place"
+            android:layout_width="200dp"
+            android:layout_height="47dp"
+
+            android:layout_toRightOf="@id/r_type"
+            android:gravity="center"
+            android:text="@{Result.place}"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/r_result"
+            android:layout_width="300dp"
+            android:layout_height="47dp"
+            android:layout_toRightOf="@id/r_place"
+            android:gravity="center"
+            android:text="@{Result.result}"
+            android:textColor="#000000"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:id="@+id/handle"
+            android:layout_width="150dp"
+            android:layout_height="47dp"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp">
+
+            <Button
+                android:id="@+id/lookup"
+                android:layout_width="70dp"
+                android:layout_height="38dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/textview_border1"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="照片"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:onClick="@{LookUp.onClickLookUp}"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
